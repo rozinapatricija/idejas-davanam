@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+<base target="_top">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Idejas dāvanām</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #F3EADF; --card: #FBF7F2; --ink: #40191B; --cocoa: #40191B; --cocoa2: #5A2D2B;
+  --taupe: #7B5A58; --rose: #C4A199; --sand: #D8C4AC; --line: #E0D0C3; --oat: #E8D8CA;
+  --sage: #566246; --sage-soft: #E7EADC; --blush: #F0E3DC;
+  --shadow: 0 1px 2px rgba(64,25,27,.05), 0 12px 30px rgba(64,25,27,.09);
+  --c0: #566246; --c1: #6B1B22; --c2: #9A6F68; --c3: #7B5A58;
+  --display: "Cormorant Garamond", Georgia, serif;
+  --body: "Lato", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; }
+body { background: var(--paper); color: var(--ink); font-family: var(--body); font-size: 15.5px; line-height: 1.5; -webkit-text-size-adjust: 100%; }
+header.top { text-align: center; color: #F5E8E3; background: linear-gradient(180deg, var(--cocoa), var(--cocoa2)); padding: 34px 16px 30px; }
+header.top h1 { font-family: var(--display); font-weight: 500; text-transform: uppercase; letter-spacing: .12em; font-size: clamp(1.5rem, 4.6vw, 2.4rem); line-height: 1.05; margin: 0; text-wrap: balance; }
+header.top .hello { margin: 10px auto 0; max-width: 58ch; color: #E8CFC9; font-size: .95rem; letter-spacing: .04em; }
+main { max-width: 760px; margin: 0 auto; padding: 36px 16px 72px; display: flex; flex-direction: column; gap: 20px; }
+.progress { height: 8px; border-radius: 999px; background: var(--oat); overflow: hidden; }
+.progress > span { display: block; height: 100%; background: var(--sage); width: 0; transition: width .4s; }
+.summary { color: var(--taupe); font-size: 14px; font-variant-numeric: tabular-nums; display: flex; justify-content: space-between; gap: 12px; margin-top: 8px; }
+.tabs { display: flex; flex-wrap: wrap; gap: 4px; border-bottom: 1px solid var(--line); }
+.tab { font: 500 .88rem var(--body); cursor: pointer; border: 0; background: transparent; color: var(--taupe); border-radius: 0; padding: 10px 14px; }
+.tab:hover { color: var(--sage); }
+.tab[aria-pressed="true"] { color: var(--cocoa); box-shadow: inset 0 -2px 0 var(--rose); }
+.grid { display: grid; gap: 14px; }
+.card { background: var(--card); border: 0; border-radius: 20px; box-shadow: var(--shadow); padding: 18px; display: grid; gap: 10px; }
+.card.taken { opacity: .8; }
+.card.taken h3 { text-decoration: line-through; text-decoration-thickness: 1px; }
+.card .child { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--cc, var(--taupe)); }
+.card h3 { margin: 0; font-family: var(--body); font-weight: 400; font-size: 1.15rem; line-height: 1.3; color: var(--cocoa); }
+.note { margin: 0; color: var(--taupe); }
+.row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; justify-content: space-between; }
+.pill { font-size: .8rem; padding: 3px 12px; border-radius: 999px; background: var(--sage-soft); color: var(--sage); }
+.taken .pill { background: var(--sand); color: var(--cocoa); }
+.mine .pill { background: var(--cocoa); color: #F5E8E3; }
+.links { display: flex; flex-direction: column; gap: 4px; }
+.card a { color: var(--taupe); font-weight: 400; word-break: break-all; }
+.btn { font: 500 .7rem var(--body); letter-spacing: .08em; text-transform: uppercase; cursor: pointer; border-radius: 999px; padding: 11px 18px; border: 1px solid var(--rose); background: transparent; color: var(--cocoa); }
+.btn.primary { background: var(--cocoa); color: var(--paper); border-color: var(--cocoa); }
+.btn:disabled { opacity: .5; cursor: default; }
+.btn:active:not(:disabled) { transform: scale(.98); }
+.form { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.form input { flex: 1 1 200px; font: 400 1rem var(--body); color: var(--ink); background: #fff; border: 1px solid #E3D2CA; border-radius: 999px; padding: 10px 16px; }
+.btn:focus-visible, .tab:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid var(--taupe); outline-offset: 2px; }
+.msg { min-height: 22px; font-size: 14px; color: var(--cocoa2); font-weight: 700; }
+.empty { padding: 28px; text-align: center; color: var(--taupe); border: 1px dashed var(--rose); border-radius: 20px; background: rgba(255,255,255,.6); }
+.foot { color: var(--taupe); font-size: .9rem; text-align: center; letter-spacing: .04em; margin-top: 16px; }
+@media (max-width: 640px) { main { padding: 24px 14px 56px; } header.top { padding: 24px 14px 22px; } header.top h1 { font-size: 1.3rem; letter-spacing: .08em; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <h1>Idejas dāvanām</h1>
+  <p class="hello">Izvēlies dāvanu un spied „Es dāvināšu!”. Tad pārējie ciemiņi redzēs, ka tā jau ir aizņemta, un dāvanas neatkārtosies. Reģistrēties nav jāvajag.</p>
+</header>
+<main>
+  <div>
+    <div class="progress" aria-hidden="true"><span id="bar"></span></div>
+    <div class="summary"><span id="summary" aria-live="polite"></span></div>
+  </div>
+
+  <nav class="tabs" id="tabs" aria-label="Bērni"></nav>
+  <div class="msg" id="msg" role="status" aria-live="polite"></div>
+  <section class="grid" id="list" aria-label="Dāvanu saraksts"></section>
+  <p class="foot">Ja pārdomā, vari atcelt savu rezervāciju tajā pašā ierīcē, kur to izdarīji. Citādi uzraksti Patrīcijai.</p>
+</main>
+
+<script>
+(function () {
+  // Datu saskarne: Google Apps Script web lietotne, kas lasa un raksta Google tabulu.
+  var API = "https://script.google.com/macros/s/AKfycbzJbU-gjw1RG-M9OmNp-Ix1Hv7Qogi5iacGoNWZEhaTeaKsLs_uqCCpHIGo1NRWr5w1nA/exec";
+
+  var COLORS = ["var(--c0)", "var(--c1)", "var(--c2)", "var(--c3)"];
+  var S = { gifts: [], tab: "Visi", open: null, busy: false, loaded: false, tokens: {} };
+  var $ = function (s) { return document.querySelector(s); };
+
+  try { S.tokens = JSON.parse(localStorage.getItem("wl-tokens") || "{}") || {}; } catch (e) { S.tokens = {}; }
+  function saveTokens() { try { localStorage.setItem("wl-tokens", JSON.stringify(S.tokens)); } catch (e) {} }
+  function savedName() { try { return localStorage.getItem("wl-name") || ""; } catch (e) { return ""; } }
+  function saveName(n) { try { localStorage.setItem("wl-name", n); } catch (e) {} }
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+  function say(t) { $("#msg").textContent = t || ""; }
+
+  function call(params) {
+    return fetch(API + "?" + new URLSearchParams(params).toString(), { credentials: "omit" })
+      .then(function (r) { return r.json(); });
+  }
+  function fail() {
+    S.busy = false; say("Neizdevās savienoties. Pamēģini vēlreiz pēc brīža."); render();
+  }
+
+  function children() {
+    var seen = [];
+    S.gifts.forEach(function (g) { if (seen.indexOf(g.child) < 0) seen.push(g.child); });
+    return seen;
+  }
+
+  function render() {
+    var names = ["Visi"].concat(children());
+    if (names.indexOf(S.tab) < 0) S.tab = "Visi";
+    var tabs = $("#tabs"); tabs.textContent = "";
+    names.forEach(function (n) {
+      var b = el("button", "tab", n); b.type = "button";
+      b.setAttribute("aria-pressed", String(n === S.tab));
+      b.addEventListener("click", function () { S.tab = n; S.open = null; say(""); render(); });
+      tabs.appendChild(b);
+    });
+
+    var shown = S.gifts.filter(function (g) { return S.tab === "Visi" || g.child === S.tab; });
+    var taken = shown.filter(function (g) { return g.taken; }).length;
+    $("#summary").textContent = shown.length ? ("Rezervētas " + taken + " no " + shown.length + " dāvanām") : "";
+    $("#bar").style.width = shown.length ? Math.round(100 * taken / shown.length) + "%" : "0";
+
+    var list = $("#list"); list.textContent = "";
+    if (!shown.length) list.appendChild(el("div", "empty", S.loaded ? "Sarakstā vēl nav dāvanu." : "Ielādē sarakstu…"));
+
+    shown.forEach(function (g) {
+      var mine = g.taken && S.tokens[g.id];
+      var card = el("article", "card" + (g.taken ? (mine ? " taken mine" : " taken") : ""));
+      card.style.setProperty("--cc", COLORS[children().indexOf(g.child) % COLORS.length]);
+      card.appendChild(el("div", "child", g.child));
+      card.appendChild(el("h3", null, g.title));
+      if (g.note) card.appendChild(el("p", "note", g.note));
+      var links = String(g.link || "").split(/\s+/).filter(function (u) { return /^https?:\/\//i.test(u); });
+      if (links.length) {
+        var lw = el("div", "links");
+        links.forEach(function (u) {
+          var host = u.replace(/^https?:\/\/(www\.)?/i, "").split(/[\/?#]/)[0];
+          var a = el("a", null, host); a.href = u; a.title = u; a.target = "_blank"; a.rel = "noopener noreferrer";
+          lw.appendChild(a);
+        });
+        card.appendChild(lw);
+      }
+      var row = el("div", "row");
+      row.appendChild(el("span", "pill", !g.taken ? "Vēl brīva" : mine ? "Tu to dāvini" : "Jau rezervēta"));
+      if (!g.taken && S.open !== g.id) {
+        var rb = el("button", "btn primary", "Es dāvināšu! 🎁"); rb.type = "button"; rb.disabled = S.busy;
+        rb.addEventListener("click", function () { S.open = g.id; say(""); render(); var i = document.getElementById("n-" + g.id); if (i) i.focus(); });
+        row.appendChild(rb);
+      } else if (mine) {
+        var ub = el("button", "btn", "Pārdomāju 🙈"); ub.type = "button"; ub.disabled = S.busy;
+        ub.addEventListener("click", function () { release(g); });
+        row.appendChild(ub);
+      }
+      card.appendChild(row);
+
+      if (!g.taken && S.open === g.id) {
+        var f = el("form", "form");
+        var inp = el("input"); inp.type = "text"; inp.id = "n-" + g.id; inp.maxLength = 40;
+        inp.placeholder = "Tavs vārds"; inp.value = savedName(); inp.setAttribute("aria-label", "Tavs vārds");
+        var ok = el("button", "btn primary", "Gatavs! ✨"); ok.type = "submit"; ok.disabled = S.busy;
+        var no = el("button", "btn", "Vēlāk"); no.type = "button";
+        no.addEventListener("click", function () { S.open = null; render(); });
+        f.appendChild(inp); f.appendChild(ok); f.appendChild(no);
+        f.addEventListener("submit", function (ev) { ev.preventDefault(); reserve(g, inp.value); });
+        card.appendChild(f);
+      }
+      list.appendChild(card);
+    });
+  }
+
+  function reserve(g, name) {
+    name = (name || "").trim();
+    if (!name) { say("Ieraksti savu vārdu."); return; }
+    S.busy = true; say(""); render();
+    call({ action: "reserve", id: g.id, name: name }).then(function (r) {
+      S.busy = false;
+      if (r && r.ok) {
+        S.tokens[g.id] = r.token; saveTokens(); saveName(name); S.open = null;
+        say("Paldies! Dāvana ir atzīmēta kā rezervēta.");
+      } else {
+        S.open = null; say("Kāds tikko paguva rezervēt šo dāvanu. Izvēlies citu.");
+      }
+      refresh();
+    }).catch(fail);
+  }
+
+  function release(g) {
+    S.busy = true; say(""); render();
+    call({ action: "release", id: g.id, token: S.tokens[g.id] }).then(function () {
+      S.busy = false; delete S.tokens[g.id]; saveTokens(); say("Rezervācija atcelta."); refresh();
+    }).catch(fail);
+  }
+
+  function refresh() {
+    call({ action: "list" }).then(function (r) {
+      if (!r || !r.ok) throw new Error("list");
+      S.gifts = r.gifts || []; S.loaded = true; S.busy = false; render();
+    }).catch(fail);
+  }
+
+  render();
+  refresh();
+  setInterval(function () {
+    if (S.busy || S.open) return;
+    call({ action: "list" }).then(function (r) {
+      if (S.busy || S.open || !r || !r.ok) return;
+      S.gifts = r.gifts || []; render();
+    }).catch(function () {});
+  }, 30000);
+})();
+</script>
+</body>
+</html>
